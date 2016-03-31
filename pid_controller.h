@@ -14,7 +14,7 @@
 class PID{
   public:
     PID(double kp_val, double ki_val, double kd_val, double min, double max);
-    double compute(double set_point, double current_point);
+    double calculate_output(double set_point, double current_point);
     double set_output_limits(double min, double max);
     double set_tunings(double kp_val, double ki_val, double kd_val);
     double get_kp();

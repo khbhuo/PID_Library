@@ -17,7 +17,7 @@ PID::PID(double kp_val, double ki_val, double kd_val, double min, double max)
 
 
 /**
-* compute calculates the error based on goal position and current position.
+* calculate_output calculates the error based on goal position and current position.
 * Using the change in error and the change in time since the last iteration,
 * it approximates the integral and derivative under the error curve, and then
 * calculates the output based on the tuning values. The function will then save 
@@ -29,13 +29,13 @@ PID::PID(double kp_val, double ki_val, double kd_val, double min, double max)
 * @returns The output values.
 * Outputs a value between the min and max output limit.
 */
-double PID::compute(double set_point, double current_point)
+double PID::calculate_output(double set_point, double current_point)
 {
   double current_time = boost::posix_time::ptime microsec_clock::universal_time();
   double error = current_point - set_point;
   double delta_time = current_time - previous_time;
 
-  //Calculate the area under the error curve
+  //Calculate the area under the error curve (Riemann Sum)
   double error_integral = error * delta_time;
 
   //Calculate the derivative (change in error / change in time)
