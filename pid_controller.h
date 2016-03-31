@@ -1,8 +1,10 @@
-/************************************************************************
-* C++ PID Library   - Version 1.0
-* Written by: Kevin Huo
-* Special Thanks To: Toni Ogunmade
-************************************************************************/
+/**
+* C++ PID Library
+* Purpose: A general purpose C++ PID library
+* @version 1.0 03/31/2016
+* @author Kevin Huo
+*/
+
 #ifndef PID_CONTROLLER_H_
 #define PID_CONTROLLER_H_
 
