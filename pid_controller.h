@@ -14,15 +14,15 @@
 class PID{
   public:
     PID(double kp_val, double ki_val, double kd_val, double min, double max);
-    double calculate_output(double set_point, double current_point);
-    double set_output_limits(double min, double max);
-    double set_tunings(double kp_val, double ki_val, double kd_val);
-    double get_kp();
-    double get_ki();
-    double get_kd();
+    double calculateOutput(double set_point, double current_point);
+    double setOutputLimits(double min, double max);
+    double setTunings(double kp_val, double ki_val, double kd_val);
+    double getKp();
+    double getKi();
+    double getKd();
 
   private:
-    double check_limits(double output);
+    double checkLimits(double output);
     double kp = 0.0, ki = 0.0, kd = 0.0, previous_output = 0.0, 
         previous_error = 0.0, previous_time = 0.0, min_output = 0.0,
         max_output = 0.0;
